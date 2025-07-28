@@ -1,76 +1,17 @@
-🗓 Day 0: Setup & First dbt Run
-Today, I set up the local development environment to successfully run my first dbt model with PostgreSQL on Windows.
+# 📊 dbt + PostgreSQL Learning Series
 
-✅ What I Did
-1.Installed PostgreSQL 17.5 on Windows
+Welcome to my learning series where I document my hands-on journey with **dbt Core** and **PostgreSQL**, starting completely from scratch.
 
-2.Verified setup using the psql command-line client
+---
 
-3.Created and activated a Python virtual environment
+## 📅 7-Day Learning Plan
 
-4.Installed dbt-core and dbt-postgres
-
-5.Initialized a new dbt project using dbt init
-
-6.Configured the profiles.yml file for local PostgreSQL connection
-
-7.Verified connection using dbt debug
-
-8.Created two basic dbt models (my_first_dbt_model.sql and my_second_dbt_model.sql)
-
-9.Successfully ran dbt run and verified the output in PostgreSQL
-
-⚙️ Setup Instructions
-
-Step 1: Create Project Folder
-mkdir my_dbt_project
-cd my_dbt_project
-
-Step 2: Set Up Virtual Environment
-python -m venv venv
-venv\Scripts\activate  
-
- Step 3: Install dbt Core + Postgres Adapter
- pip install dbt-core dbt-postgres
-
-Step 4: Initialize dbt Project
-dbt init my_dbt_project
-cd my_dbt_project
-
-
-This creates:
-dbt_project.yml
-models/ folder with sample models
-Your project name and structure
-
-Step 5: Configure Connection (Postgres)
-When prompted during dbt init, provide:
-profile: my_dbt_project
-host: localhost
-port: 5432
-user: postgres
-password: [your password]
-dbname: postgres
-schema: public
-threads: 1
-
- Step 6: Test Connection
- dbt debug
-
-
-Step 7: Create dbt Model
-Go to the models/ directory and update my_first_dbt_model.sql:
--- my_first_dbt_model.sql
-
-select
-    1 as id,
-    'hello_dbt' as message
-
-    
-Step 8: Run Your dbt Models
-dbt run
-
-Step 9: Verify in PostgreSQL
-SELECT * FROM public.my_first_dbt_model;
-SELECT * FROM public.my_second_dbt_model;
-
+| Day |  Description |
+|-----|-------------|
+| Day 0 | Setup & First dbt Run | Install PostgreSQL, set up virtualenv, install dbt, connect to db, and run your first dbt model. |
+| Day 1 |  Model Building Basics | Learn how to structure dbt models, use folders, materializations (`view`, `table`), and schema. |
+| Day 2 |  Sources & Seeds | Define sources (`source:`), use seed data, and understand how dbt references external tables. |
+| Day 3 |  Testing & Documentation | Write tests (unique, not null), add documentation, and generate a dbt docs site. |
+| Day 4 |  Jinja & Macros | Use Jinja templates, create reusable macros, and understand how logic is added in dbt. |
+| Day 5 |  Snapshots & Incremental Models | Learn about slowly changing dimensions using `snapshots` and `incremental` materializations. |
+| Day 6 |  End-to-End Project Build | Build a mini analytics project using raw → staging → marts pattern with sources, models, and tests. |
